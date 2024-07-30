@@ -4,7 +4,6 @@ class Sorting
   def self.insertion_sort(arr)
     (1..arr.length - 1).each do |j|
       key = arr[j]
-      puts j
       i = j - 1
       while i >= 0 && arr[i] > key
         arr[i + 1] = arr[i]
