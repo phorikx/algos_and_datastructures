@@ -18,6 +18,21 @@ class Sorting
     merge_sort_starter(arr, 0, arr.length)
   end
 
+  def self.bubble_sort(arr)
+    (1..(arr.length - 1)).each do |i|
+      ((i + 1)..(arr.length)).each do |k|
+        j = arr.length - (k - i)
+        puts j
+        next unless arr[j - 1] > arr[j]
+
+        c = arr[j - 1]
+        arr[j - 1] = arr[j]
+        arr[j] = c
+      end
+    end
+    arr
+  end
+
   private
 
   def self.merge_sort_starter(arr, i, j)
@@ -33,7 +48,6 @@ class Sorting
   private
 
   def self.merge_sort_helper(arr, i, j, k)
-    puts "#{arr.length}, #{i}, #{j}, #{k}"
     length_first_part = j - i
     length_second_part = k - j
     arr_1 = arr.slice(i, length_first_part)
@@ -61,7 +75,6 @@ class Sorting
       q += 1
       r += 1
     end
-    puts(arr)
     arr
   end
 end
